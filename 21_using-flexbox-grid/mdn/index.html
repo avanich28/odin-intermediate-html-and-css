@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relationship of grid layout to other layout methods</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h3>Flexbox</h3>
+    <div class="wrapper">
+      <div>One</div>
+      <div>Two</div>
+      <div>Three</div>
+      <div>Four</div>
+      <div>Five</div>
+    </div>
+
+    <h3>Grid</h3>
+    <div class="wrapper-2">
+      <div>One</div>
+      <div>Two</div>
+      <div>Three</div>
+      <div>Four</div>
+      <div>Five</div>
+    </div>
+
+    <h3>Flex Alignment</h3>
+    <div class="wrapper-3">
+      <div class="box1">One</div>
+      <div class="box2">Two</div>
+      <div class="box3">Three</div>
+    </div>
+
+    <h3>Grid Alignment</h3>
+    <div class="wrapper-4">
+      <div class="box1">One</div>
+      <div class="box2">Two</div>
+      <div class="box3">Three</div>
+    </div>
+
+    <h3>auto-fill</h3>
+    <div class="wrapper-5">
+      <div>One</div>
+      <div>Two</div>
+      <div>Three</div>
+    </div>
+
+    <h3>auto-fit</h3>
+    <div class="wrapper-6">
+      <div>One</div>
+      <div>Two</div>
+      <div>Three</div>
+    </div>
+
+    <h3>grid and absolute position</h3>
+    <div class="wrapper-7">
+      <div class="box1">One</div>
+      <div class="box2">Two</div>
+      <div class="box3">
+        This block is absolutely positioned. In this example the grid container
+        is the containing block and so the absolute positioning offset values
+        are calculated in from the outer edges of the area it has been placed
+        into.
+      </div>
+      <div class="box4">Four</div>
+    </div>
+
+    <h3>grid aria as parent</h3>
+    <div class="wrapper-8">
+      <div class="box1">One</div>
+      <div class="box2">Two</div>
+      <div class="box3">
+        Three
+        <div class="abspos">
+          This block is absolutely positioned. In this example the grid area is
+          the containing block and so the absolute positioning offset values are
+          calculated in from the outer edges of the grid area.
+        </div>
+      </div>
+      <div class="box4">Four</div>
+    </div>
+
+    <h3>Grid and display: content</h3>
+    <div class="wrapper-9">
+      <div class="box box11">
+        <div class="nested">a</div>
+        <div class="nested">b</div>
+        <div class="nested">c</div>
+      </div>
+      <div class="box box22">Two</div>
+      <div class="box box33">Three</div>
+      <div class="box box44">Four</div>
+      <div class="box box55">Five</div>
+    </div>
+
+    <h3>justify-content & align-content</h3>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MDN: Advanced form styling</title>
+  </head>
+  <style>
+    input[type="checkbox"] {
+      appearance: none;
+    }
+
+    input[type="checkbox"] {
+      position: relative;
+      width: 1em;
+      height: 1em;
+      border: 1px solid gray;
+      /* Adjusts the position of the checkboxes on the text baseline */
+      vertical-align: -2px;
+      /* Set here so that Windows' High-Contrast Mode can override */
+      color: green;
+    }
+
+    input[type="checkbox"]::before {
+      content: "✔";
+      position: absolute;
+      font-size: 1.2em;
+      right: -1px;
+      top: -0.3em;
+      visibility: hidden;
+    }
+
+    input[type="checkbox"]:checked::before {
+      /* Use `visibility` instead of `display` to avoid recalculating layout */
+      visibility: visible;
+    }
+
+    input[type="checkbox"]:disabled {
+      border-color: black;
+      background: #ddd;
+      color: gray;
+    }
+
+    /* UI pseudo-classes */
+    input:required {
+      border: 1px solid black;
+    }
+
+    input:optional {
+      border: 1px solid silver;
+    }
+
+    fieldset > div {
+      margin-bottom: 20px;
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    div > * {
+      flex: 1;
+    }
+
+    input + span {
+      position: relative;
+    }
+
+    input:required + span::after {
+      font-size: 0.7rem;
+      position: absolute;
+      content: "required";
+      color: white;
+      background-color: black;
+      padding: 5px 10px;
+      top: -26px;
+      left: -70px;
+    }
+  </style>
+  <body>
+    <!-- Topic: Advanced form styling -->
+    <form>
+      <!-- appearance none on radios/checkboxes -->
+      <fieldset>
+        <legend>Fruit preferences</legend>
+
+        <p>
+          <label>
+            <input type="checkbox" name="fruit" value="cherry" />
+            I like cherry
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="fruit" value="banana" disabled />
+            I can't like banana
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" name="fruit" value="strawberry" />
+            I like strawberry
+          </label>
+        </p>
+      </fieldset>
+    </form>
+
+    <!-- UI pseudo-classes -->
+    <form>
+      <fieldset>
+        <legend>Feedback form</legend>
+        <p>Required fields are labelled with "required".</p>
+        <div>
+          <label for="fname">First name: </label>
+          <input id="fname" name="fname" type="text" required />
+          <span></span>
+        </div>
+        <div>
+          <label for="lname">Last name: </label>
+          <input id="lname" name="lname" type="text" required />
+          <span></span>
+        </div>
+        <div>
+          <label for="email">
+            Email address (include if you want a response):
+          </label>
+          <input id="email" name="email" type="email" />
+          <span></span>
+        </div>
+        <div><button>Submit</button></div>
+      </fieldset>
+    </form>
+  </body>
+</html>

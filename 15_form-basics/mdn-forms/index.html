@@ -1,0 +1,91 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Basics</title>
+  </head>
+  <style>
+    form {
+      margin: 0 auto;
+      width: 400px;
+      padding: 1em;
+      border: 1px solid #ccc;
+      border-radius: 1em;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    form li + li {
+      margin-top: 1em;
+    }
+
+    label {
+      display: inline-block;
+      width: 90px;
+      text-align: right;
+    }
+
+    input,
+    textarea {
+      /* same font setting, textareas have a monospace font by default */
+      font: 1em sans-serif;
+      width: 300px;
+      box-sizing: border-box;
+      border: 1px solid #999;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #000;
+    }
+
+    textarea {
+      vertical-align: top; /*inline, inline-block */
+      height: 5em;
+    }
+
+    .button {
+      padding-left: 90px;
+    }
+
+    button {
+      margin-left: 0.5em;
+    }
+  </style>
+  <body>
+    <!-- Topic: Your first form -->
+    <!-- action: where form's data should be sent -->
+    <!-- method: define HTTP method -->
+    <form action="/my-handling-form-page" method="post">
+      <ul>
+        <li>
+          <!-- value: define the default value of input -->
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            name="user_name"
+            id="name"
+            value="by default this element is filled with this text"
+          />
+        </li>
+        <li>
+          <label for="mail">E-mail:</label>
+          <input type="email" name="user_email" id="mail" />
+        </li>
+        <li>
+          <label for="msg">Message:</label>
+          <textarea name="user_message" id="msg" cols="30" rows="10">
+by default this element is filled with this text</textarea
+          >
+        </li>
+        <li class="button">
+          <button type="submit">Send your message</button>
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,188 @@
+body {
+  font-size: 125%;
+}
+.px {
+  font-size: 16px;
+}
+
+.rem {
+  font-size: 1.5rem;
+}
+
+/* Using Custom Properties */
+.error-modal {
+  --color-error-text: red;
+  --modal-border: 1px solid black;
+  --modal-font-size: calc(2rem + 5vw);
+
+  color: var(--color-error-text);
+  border: var(--modal-border);
+  font-size: var(--modal-font-size);
+}
+
+.em {
+  font-size: 1.5em;
+}
+
+/* Fallback Values */
+.fallback {
+  --color-text: white;
+
+  background-color: var(--undeclared-property, black);
+  color: var(--undeclared-again, var(--color-text, yellow));
+}
+
+/* Scope */
+.cool-div {
+  --main-bg: red;
+}
+
+.cool-paragraph {
+  background-color: var(--main-bg);
+}
+
+.boring-paragraph {
+  /* can't access custom property */
+  background-color: var(--main-bg);
+}
+
+/* :root */
+
+/* Any other selector would be considered a descendant of the :root selector. */
+:root {
+  --main-color: salmon;
+}
+
+.hot-paragraph {
+  color: var(--main-color);
+}
+
+.exciting-paragraph {
+  background-color: var(--main-color);
+}
+
+/* Creating Themes with Customs Properties */
+:root.dark {
+  --border-btn: 1px solid rgb(220, 220, 220);
+  --color-base-bg: rgb(18, 18, 18);
+  --color-base-text: rgb(240, 240, 240);
+  --color-btn-bg: rgb(36, 36, 36);
+}
+
+:root.light {
+  --border-btn: 1px solid rgb(36, 36, 36);
+  --color-base-bg: rgb(240, 240, 240);
+  --color-base-text: rgb(18, 18, 18);
+  --color-btn-bg: rgb(220, 220, 220);
+}
+
+body,
+.theme-toggle {
+  color: var(--color-base-text);
+}
+
+body {
+  background-color: var(--color-base-bg);
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+.theme-toggle {
+  background-color: var(--color-btn-bg);
+  border: var(--border-btn);
+  font-size: 1.125rem;
+  padding: 10px 20px;
+}
+
+.theme-toggle:hover {
+  cursor: pointer;
+}
+
+.theme-toggle:focus {
+  outline: var(--border-btn);
+}
+
+/* Media Queries */
+/* Using the user’s theme setting from their operating system or user agent (like a browser). */
+
+/* This can be accomplished with the prefers-color-scheme media query 🔥, which simply checks whether a user has selected a theme preference on their OS/user agent. */
+
+:root {
+  --border-btn: 1px solid rgb(36, 36, 36);
+  --color-base-bg: rgb(240, 240, 240);
+  --color-base-text: rgb(18, 18, 18);
+  --color-btn-bg: rgb(220, 220, 220);
+  --theme-name: "light";
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border-btn: 1px solid rgb(220, 220, 220);
+    --color-base-bg: rgb(18, 18, 18);
+    --color-base-text: rgb(240, 240, 240);
+    --color-btn-bg: rgb(36, 36, 36);
+    --theme-name: "dark";
+  }
+}
+
+body {
+  background-color: var(--color-base-bg);
+  color: var(--color-base-text);
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+.theme-name::after {
+  content: var(--theme-name);
+}
+
+/* 
+1. Only dark and light are valid values for the media query, so you can’t use it to implement any themes beyond these two basic ones.
+
+2. The light value for the media query is actually for when a user has a light theme specified or when they have no preference set.
+
+3. It doesn’t allow users to change the theme themselves, which can still be important in cases where a user might want to use the theme opposite of their OS/user agent preferred one for whatever reason. 
+*/
+
+/* Invalid normal properties */
+.invalid-normal {
+  color: blue; /* apply! */
+}
+
+.invalid-normal {
+  color: 16px; /* Invalid - CSS discarded this! */
+}
+
+/* Invalid custom properties */
+:root {
+  --text-color: 16px; /* not valid */
+  /* All custom properties are treated as valid bcs browser doesn't yet know where they will be used. */
+  /* valid at computed time */
+}
+
+p {
+  color: blue;
+}
+
+p {
+  color: var(--text-color);
+  /* var() -> valid values -> encounters invalid -> check color form the parent <p> -> doesn't have -> check default initial value */
+}

@@ -1,0 +1,224 @@
+/* 1 Parent and Sibling Combinators */
+
+/* select child and grand child */
+main div {
+  color: pink;
+}
+
+/* select divs with a class of child */
+main > div {
+  color: green;
+}
+
+/* select divs with a class of grand-child */
+main > div > div {
+  color: red;
+}
+
+/* select the div with the class child group2 */
+.group1 + div {
+  color: blue;
+}
+
+/* select the div with the class child group3 */
+.group1 + div + div {
+  color: orange;
+}
+
+/* select all of .group1's siblings - in this case the 2nd and 3rd .child divs */
+.group1 ~ div {
+  font-style: italic;
+}
+
+/* 2 Calculate CSS Specificity Value */
+
+/* Important!, Style attribute, ID, Class/psuedo-class, attribute, elements */
+/* 0, 0, 0, 1, 0 */
+.favorite {
+  color: red;
+  font-weight: bold;
+}
+
+ul#summer-drinks li {
+  font-weight: normal;
+  font-size: 12px;
+  color: black;
+}
+
+ul#summer-drinks li.favorite {
+  color: red;
+  font-weight: bold;
+}
+
+.favorite {
+  color: red !important;
+  font-weight: bold !important;
+}
+
+/* 3 Pseudo-selectors */
+
+/* 3.1 Pseudo-classes */
+
+/* Dynamic and User Action Pseudo-classes */
+/* :hover :active :focus... */
+
+/* default value for <a> */
+a {
+  text-decoration: underline;
+}
+
+a:link {
+  color: blue;
+}
+
+a:visited {
+  color: purple;
+}
+
+/* Structural Pseudo-classes */
+
+/* :root > html */
+/* :first-child == h1 vs p:first-of-type vs p:nth-child(1) == p */
+
+/* :empty will match elements that have no children at all */
+section:empty {
+  background-color: tomato;
+  min-height: 1rem;
+  min-width: 1rem;
+}
+
+/* :only-child มี child ตัวเดียว */
+.only-child p:only-child {
+  color: red;
+}
+
+:nth-child(-n + 3 of .picture) {
+  /* 
+  Suppose you have a list of mixed content: Some have the class .video, some have the class .picture, and you want to select the first 3 pictures. 
+
+     Selects the first 3 elements
+     applied not to ALL children but 
+     only to those matching .picture 
+  */
+}
+
+.picture:nth-child(-n + 3) {
+  /* 
+     Not the same! 
+     This applies to elements matching .picture 
+     which _also_ match :nth-child(-n+3)  
+  */
+}
+
+.myList:nth-child(5) {
+  /* Selects the 5th element with class myList */
+}
+
+.myList:nth-child(3n) {
+  /* Selects every 3rd element with class myList */
+}
+
+.myList:nth-child(3n + 3) {
+  /* Selects every 3rd element with class myList, beginning with the 3rd */
+}
+
+.myList:nth-child(even) {
+  /* Selects every even element with class myList */
+}
+
+/* 3.2 Pseudo-elements */
+
+/* They allow us to affect parts of our HTML that aren’t elements at all. (0, 0, 0, 1) */
+
+/* ::marker */
+ol li::marker {
+  color: red;
+  font-weight: bold;
+}
+
+ul li::marker {
+  font-size: 150%;
+  color: lightgreen;
+}
+
+.emoji li::marker {
+  content: "🧡 ";
+}
+
+h3 {
+  counter-increment: h3;
+  display: list-item;
+  margin-left: 2rem;
+}
+
+h3::marker {
+  /* display: list-item; */
+  content: "#" counter(h3) " ";
+  color: lightsalmon;
+  font-weight: bold;
+}
+
+/* p::first-letter vs p::first-line */
+
+/* p::selection Fragment Pseudo-element (:: only, other can use : ) */
+p::-moz-selection {
+  /* the best support for all browsers */
+  color: #fff;
+  background-color: #ff0000;
+}
+p::selection {
+  color: #fff;
+  background-color: #ff0000;
+  /* Only 3 properties that ::selection will work with
+  1. color
+  2. background
+  3. text-shadow */
+}
+
+/* ::before ::after insert content */
+/* content: str, img, '', counter(li), \ */
+.emojify::before {
+  content: "😎 🥸 🤓";
+}
+
+.emojify::after {
+  content: "🤓 🥸 😎";
+}
+
+/* Attribute Selectors */
+[src] {
+  /* This will target any element that has a src attribute. */
+}
+
+img[src] {
+  /* This will only target img elements that have a src attribute. */
+}
+
+img[src="puppy.jpg"] {
+  /* This will target img elements with a src attribute that is exactly "puppy.jpg" */
+}
+
+/* (regular expression) */
+[class^="aus"] {
+  /* Classes are attributes too!
+    This will target any class that begins with 'aus':
+    class='austria'
+    class='australia'
+  */
+}
+
+[src$=".jpg"] {
+  /* This will target any src attribute that ends in '.jpg':
+  src='puppy.jpg'
+  src='kitten.jpg'
+  */
+}
+
+[for*="ill"] {
+  /* This will target any for attribute that has 'ill' anywhere inside it:
+  for="bill"
+  for="jill"
+  for="silly"
+  for="ill"
+  */
+}

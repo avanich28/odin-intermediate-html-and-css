@@ -1,0 +1,116 @@
+Topic: Form Basics
+
+1. The Form Element
+
+- 2 essential attribute
+action - takes urk value that tells the form where it should send its data to be processed.
+
+method - tells the browser which HTTP request method it should use to submit the form. There are GET and POST request method.
+
+- 2 request methods
+GET - want to retrieve sth on the server
+
+POST - want to change sth on the server
+
+- The markup for creating a form Element
+<form action="example.com/path" method="post"></form>
+
+2. Form Controls
+
+- Need to use form control elements such as text boxes, dropdowns, checkboxes and buttons
+
+3. The Input Element
+
+- attribute: type
+- collect thing like users' first and last names
+
+- *element: label
+- attribute: for (associates it with id in input 🔥)
+- inform user what type of data the are expected to enter in the input.
+- automatically focus on the input
+
+- attribute: placeholder
+- placeholder text we want to display in the input
+
+- attribute: name
+- need to let the backend, where we send our data, know what each piece of data represents.
+- Form input should always have a name attribute 🔥; otherwise, it will be ignored when the form is submitted.
+- form object will show all 'name' attributes
+"form": {
+    "age": "33",
+    "first_name": "John",
+    "last_name": "Doe"
+  },
+
+- Using Form Controls Outside of Forms
+can use any of the form controls HTML provides outside of the <form> element ex. in script.js
+
+- The Type of attribute
+
+Email inputs
+Password inputs - show bullet point (•) 
+number input - only accepts number values 
+date input
+
+- Text Area
+provides an input box like user comments and reviews
+attribute: rows, cols
+
+<textarea></textarea>
+
+4. Selection elements
+
+- Select Dropdown
+element: select > option
+attribute: name > value
+
+- optgroup: Split the list of options into groups
+element: select > optgroup > option
+attribute: name > label > value
+
+- Radio buttons
+propose: use when we have a smaller list and can select only 1 radio btns
+element: input > label
+type: radio
+attribute: type, id, name > for
+note: all radio should have the same 'name'
+
+- Checkboxes
+propose: similar to radio btns but allow multiple options
+- Can set checkboxes to be checked by default
+
+5. buttons
+
+- user can interact with to submit forms and trigger other actions.
+- The button element also accepts a type attribute that tells the browser which kind of button it is dealing with.
+
+3 types of button
+- Submit Buttons 
+(submit once a user is finished filling in a form)
+- type: submit
+
+- Reset Buttons
+(clears all the data the user has entered into the form and set inputs back to what they were initially)
+- type: reset
+
+- Generic Button
+(can be used for anything, especially in JS)
+- type: button
+
+Note: 
+It is important to remember that a button within a form with the type value of submit (which happens to be the default value) will always try to make a new request and submit data back to the server. 
+
+Hence, for buttons that are used within a form for different purposes other than submitting the data, the type attribute should always be specified to avoid unwanted effects of submitting a form. 🔥
+
+6. Organizing Form Elements
+
+- element: <fieldset></fieldset>
+- The fieldset element is a container element that allows us to group related form inputs into one logical unit.
+- mostly using in radio buttons and using a legend to communicate to the user
+
+- element: <legend></legend>
+- give field sets a heading or caption
+
+7. A Note on Styling Forms
+
+- accent-color -> <input type="checkbox, radio, range> / <progress></progress>

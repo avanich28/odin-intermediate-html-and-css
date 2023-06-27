@@ -1,0 +1,47 @@
+/* calc() */
+:root {
+  --header: 8rem;
+  --footer: 40px;
+  --main: calc(90vh - calc(var(--header) + var(--footer)));
+  font-size: 125%; /* must set as % to consistent with browser default */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0 solid transparent;
+  background-color: #7a7a7a;
+}
+
+#container {
+  border: 0 solid transparent;
+  height: 100vh;
+  color: white;
+}
+
+#container > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#header {
+  height: var(--header);
+  background-color: black;
+}
+
+#mainContent {
+  height: var(--main);
+  background-color: #343434;
+  margin: 0 auto;
+}
+
+#footer {
+  height: var(--footer);
+  background-color: #232323;
+}
+
+div > * > div {
+  font-size: 12px; /* default change -> px not change (zoom -> change) */
+}

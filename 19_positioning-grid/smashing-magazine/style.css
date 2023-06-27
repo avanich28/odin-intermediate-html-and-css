@@ -1,0 +1,110 @@
+body {
+  padding: 50px;
+  font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.grid {
+  border: 5px solid rgb(111, 41, 97);
+  display: grid;
+  grid-template: repeat(4, 100px) / repeat(4, 1fr);
+  grid-template-areas:
+    "one one two two"
+    "one one two two"
+    "..... . four four"
+    "three three four four";
+  gap: 10px;
+  inline-size: 500px;
+}
+
+.grid > * {
+  background-color: rgba(111, 41, 97, 0.4);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.four {
+  grid-area: four;
+}
+
+.item {
+  /* grid-column: 2 / 4;
+  grid-row: 1 / 4; */
+
+  /* grid-area: 1 / 2 / 4 / 4; */
+
+  /* (grid-row-start: 3) */
+  grid-area: 3;
+}
+
+.grid-2 {
+  display: grid;
+  border: 5px solid rgb(111, 41, 97);
+  gap: 10px;
+  inline-size: 500px;
+
+  grid-template: repeat(4, 100px) / repeat(4, 1fr);
+
+  grid-template-columns: [one-start three-start] 1fr 1fr [one-end three-end two-start four-start] 1fr 1fr [two-end four-end];
+
+  grid-template-rows:
+    [one-start two-start] 100px 100px
+    [one-end two-end three-start four-start] 100px 100px [three-end four-end];
+}
+
+.grid-2 > * {
+  background-color: rgb(250, 163, 49);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.two-2 {
+  grid-area: two-start / two-start / two-end;
+}
+
+/* Responsive Design */
+.wrapper {
+  background-color: #fff;
+  padding: 1em;
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "hd"
+    "bd"
+    "sd"
+    "ft";
+}
+
+@media (min-width: 600px) {
+  .wrapper {
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+      "hd hd"
+      "bd sd"
+      "ft ft";
+  }
+}
+
+header {
+  grid-area: hd;
+}
+article {
+  grid-area: bd;
+}
+aside {
+  grid-area: sd;
+}
+footer {
+  grid-area: ft;
+}

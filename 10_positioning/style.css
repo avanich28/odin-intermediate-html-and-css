@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 400vh;
+}
+
+div {
+  font-size: 18px;
+}
+.static {
+  left: 10px; /* not move in static */
+  background-color: salmon;
+}
+
+.relative {
+  position: relative;
+  top: -5px;
+  left: 30px; /* move */
+  background-color: rgb(145, 198, 194);
+  padding: 5px;
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 5em; /* 3 x font-size */
+  background-color: pink;
+}
+
+div:empty {
+  background-color: green;
+  height: 20px;
+}
+
+span {
+  display: inline-block;
+  height: 30px;
+  background-color: yellow;
+}
+
+.absolute2 {
+  position: absolute;
+  background-color: orange;
+  left: 50%;
+  z-index: 2;
+  top: 10px; /* If both top and bottom are specified, top wins. 🔥 */
+  bottom: 0px; /* ตำแหน่งล่างสุดนับจากค่า threshold ไม่ใช่ทั้งหน้า */
+}
+
+.fixed {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  /* bottom: 0px; */
+  background-color: rgb(186, 55, 55);
+}
+
+.sticky {
+  /* relative + fixed */
+  position: sticky;
+  top: 0px; /* threshold */
+  color: white;
+  background-color: #e74c3c;
+}
+
+/* sticky example */
+
+.example {
+  width: 300px;
+}
+
+.content {
+  background: #333;
+  height: 250px;
+  margin: 1em;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: limegreen;
+  font-size: 2em;
+}
+
+.stickyy {
+  position: sticky;
+  top: 0;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Advanced Selectors</title>
+  </head>
+  <body>
+    <!-- Parent and Sibling Combinators -->
+    <main class="parent">
+      <div class="child group1">
+        group1
+        <div class="grand-child group1">Tsundare</div>
+      </div>
+      <div class="child group2">
+        group2
+        <div class="grand-child group2">Aligato</div>
+      </div>
+      <div class="child group3">
+        group3
+        <div class="grand-child group3">konijiwa</div>
+      </div>
+    </main>
+
+    <!-- pseudo classes -->
+    <ul id="summer-drinks">
+      <li class="favorite">Whiskey and Ginger Ale</li>
+      <li>Wheat Beer</li>
+      <li>Mint Julip</li>
+    </ul>
+
+    <!-- pseudo-classes -->
+    <a href="#">link</a>
+
+    <!-- :empty -->
+    <section>
+      <p>I have content</p>
+    </section>
+
+    <section>
+      <p>I have content, too!</p>
+    </section>
+
+    <section><!-- No content, just an HTML comment. 🎺 --></section>
+
+    <div class="empty"></div>
+
+    <div class="only-child">
+      <p>This paragraph is the only child of its parent</p>
+    </div>
+
+    <div class="only-child">
+      <p>This paragraph is the first child of its parent</p>
+      <p>This paragraph is the second child of its parent</p>
+    </div>
+
+    <!-- marker -->
+    <ol>
+      <li>Lorem ipsum dolor sit amet.</li>
+      <li>Corporis aliquam excepturi neque deleniti.</li>
+      <li>Incidunt eos repellendus vitae deserunt!</li>
+    </ol>
+
+    <ul>
+      <li>Lorem ipsum dolor sit amet.</li>
+      <li>Laborum molestias consequuntur soluta ab.</li>
+      <li>Et veniam suscipit quod qui.</li>
+    </ul>
+
+    <ol class="emoji">
+      <li>Lorem ipsum dolor sit amet.</li>
+      <li>Corporis aliquam excepturi neque deleniti.</li>
+      <li>Incidunt eos repellendus vitae deserunt!</li>
+    </ol>
+
+    <h3>Lorem ipsum dolor sit amet.</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <h3>Itaque sequi eaque earum laboriosam.</h3>
+    <p>
+      Ratione culpa reprehenderit beatae quaerat voluptatibus, debitis iusto?
+    </p>
+    <h3>Laudantium sapiente commodi quidem excepturi!</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+    <!-- ::selection -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores ex
+      nemo enim voluptas cupiditate, libero molestias beatae in deserunt
+      perspiciatis doloremque accusantium laudantium quos sit nisi sequi error
+      incidunt illo.
+    </p>
+
+    <!-- ::before ::after -->
+    <div>Let's <span class="emojify">emojify</span>this span!</div>
+  </body>
+</html>

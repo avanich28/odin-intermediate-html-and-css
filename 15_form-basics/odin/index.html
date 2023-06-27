@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Form Basics</title>
+  </head>
+  <body>
+    <!-- The markup for creating a form element -->
+    <form action="https://httpbin.org/post" method="post">
+      <!-- Labels -->
+      <div>
+        <label for="first_name">First Name:</label>
+        <!-- The input ELement -->
+        <input
+          type="text"
+          id="first_name"
+          placeholder="Bob..."
+          name="first_name"
+        />
+      </div>
+      <div>
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name" />
+      </div>
+      <div>
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Using Form Controls Outside of Forms -->
+    <label for="username">What's your name?</label>
+    <input type="text" id="username" />
+    <button class="greet-btn">Greet Me</button>
+
+    <h1 class="greeting"></h1>
+
+    <form action="example.com/path" method="post">
+      <!-- Email inputs -->
+      <div>
+        <label for="user_email">Email Address:</label>
+        <input
+          type="email"
+          id="user_email"
+          name="email"
+          placeholder="you@example.com"
+        />
+      </div>
+
+      <!-- Password inputs -->
+      <div>
+        <label for="user_password">Password:</label>
+        <input type="password" id="user_password" name="password" />
+      </div>
+
+      <!-- number input -->
+      <div>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" />
+      </div>
+
+      <!-- date input -->
+      <div>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" />
+      </div>
+
+      <!-- Text Area -->
+      <textarea name="comment" id="" cols="30" rows="10">
+Some initial content</textarea
+      >
+    </form>
+
+    <form action="https://httpbin.org/post" method="post">
+      <!-- Select Dropdown -->
+      <div>
+        <label for="car-brand">Brand:</label>
+        <select name="Car" id="car-brand">
+          <option value="mercedes">Mercedes</option>
+          <option value="tesla">Tesla</option>
+          <option value="volvo">Volvo</option>
+          <option value="bmw">BMW</option>
+          <option value="mini">Mini</option>
+          <option value="ford">Ford</option>
+        </select>
+      </div>
+
+      <!-- optgroup -->
+      <div>
+        <label for="wearing">Wearing</label>
+        <select name="fashion" id="wearing">
+          <optgroup label="Clothing">
+            <option value="t_shirt">T-Shirts</option>
+            <option value="sweater">Sweaters</option>
+            <option value="coats">Coats</option>
+          </optgroup>
+          <optgroup label="Foot Wear">
+            <option value="sneakers">Sneakers</option>
+            <option value="boots">Boots</option>
+            <option value="sandals">Sandals</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <!-- Radio Buttons -->
+      <h1>Ticket Type</h1>
+      <div>
+        <input type="radio" id="child" name="ticket_type" value="child" />
+        <label for="child">Child</label>
+      </div>
+
+      <div>
+        <input type="radio" id="adult" name="ticket_type" value="adult" />
+        <label for="adult">Adult</label>
+      </div>
+
+      <div>
+        <input type="radio" id="senior" name="ticket_type" value="senior" />
+        <label for="senior">Senior</label>
+      </div>
+
+      <!-- Checkboxes -->
+      <h1>Pizza Toppings</h1>
+
+      <fieldset>
+        <div>
+          <input type="checkbox" id="sausage" name="topping" value="sausage" />
+          <label for="sausage">Sausage</label>
+        </div>
+        <div>
+          <input type="checkbox" id="onions" name="topping" value="onions" />
+          <label for="onions">Onions</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="pepperoni"
+            name="topping"
+            value="pepperoni"
+          />
+          <label for="pepperoni">Pepperoni</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="muchrooms"
+            name="topping"
+            value="muchrooms"
+          />
+          <label for="muchrooms">Muchrooms</label>
+        </div>
+        <!-- Can set checkboxes to be checked by default -->
+        <div>
+          <input
+            type="checkbox"
+            id="newsletter"
+            name="newsletter"
+            value="news_letter"
+            checked
+          />
+          <label for="newsletter">Send me the news letter</label>
+        </div>
+      </fieldset>
+
+      <!-- Submit button -->
+      <button type="submit">Submit</button>
+
+      <!-- Reset Button -->
+      <button type="reset">Reset</button>
+
+      <!-- Generic Button -->
+      <button type="button">Click to Toggle</button>
+    </form>
+
+    <form action="https://httpbin.org/post" method="post">
+      <fieldset>
+        <legend>Contact Details</legend>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" />
+
+        <label for="phone_number">Phone Number:</label>
+        <input type="tel" id="phone_number" name="phone_number" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Delivery Details</legend>
+
+        <label for="street_address">Street Address:</label>
+        <input type="text" name="street_address" id="street_address" />
+
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city" />
+
+        <label for="zip_code">Zip Code:</label>
+        <input type="text" name="zip_code" id="zip_code" />
+      </fieldset>
+
+      <!-- mostly use fieldset in radio btn -->
+      <fieldset>
+        <legend>What would you like to drink?</legend>
+
+        <div>
+          <input type="radio" name="drink" id="coffee" value="coffee" />
+          <label for="coffee">Coffee</label>
+        </div>
+
+        <div>
+          <input type="radio" name="drink" id="soda" value="soda" />
+          <label for="soda">Soda</label>
+        </div>
+      </fieldset>
+    </form>
+
+    <!-- Pure CSS Custom Checkbox Style -->
+    <form action="https://httpbin.org/post" method="post">
+      <label class="form-control">
+        <input type="checkbox" name="checkbox" />Checkbox
+      </label>
+
+      <label class="form-control">
+        <input type="checkbox" name="checkbox-checked" checked />Checkbox -
+        checked
+      </label>
+
+      <!-- disabled -->
+      <label class="form-control form-control--disabled">
+        <input
+          type="checkbox"
+          name="checkbox-disabled-checked checked
+        disabled"
+        />
+        Checkbox Disabled
+      </label>
+
+      <label class="form-control form-control--disabled">
+        <input
+          type="checkbox"
+          name="checkbox-disabled-checked checked
+        disabled"
+        />
+        Checkbox Disabled - checked
+      </label>
+
+      <div>
+        <input type="radio" name="answer" id="ans" class="accent-color" />
+        <label for="ans">Delicious</label>
+      </div>
+    </form>
+  </body>
+</html>

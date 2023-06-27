@@ -1,0 +1,65 @@
+1 Parent and Sibling Combinators
+div p - descendent combinators
+> - child combinator
++ - adjacent Sibling
+~ = general Sibling
+
+2 Pseudo-selectors
+
+2.1 Pseudo-classes
+- Dynamic and User Action Pseudo-classes
+:focus 
+:hover
+:active
+:visited
+:target
+
+- Structural Pseudo-classes
+:root 
+:empty
+apple:not(.small) // class or id or el
+* // all
+
+Count every el
+:first-child 
+:last-child
+:only-child
+:nth-child(n, An+B) // odd even
+:nth-last-child(n, An+b)
+
+Count only the el that matched within the stated selector
+:first-of-type
+:last-of-type
+:only-of-type
+:nth-of-type(A)
+:nth-of-type(An + B) // odd even
+:nth-last-of-type(n)
+
+2.2 Pseudo-elements
+::marker, 
+::first-letter, ::first-line
+::selection,
+::before, ::after
+
+3 Attribute Selectors (0, 0, 1, 0)
+
+[attribute] 
+selector[attribute] 
+[attribute="value"]
+
+[attribute^="value"] - ^= Will match strings from the start.
+
+[attribute$="value"] - $= Will match strings from the end.
+
+[attribute*="value"] - *= The wildcard selector will match anywhere inside the string.
+
+[att |= value] - value have whitespace separated  (for example, class=“title featured home”), and one of the words is exactly the specified value.
+
+[arr ~= value] - The attribute’s value is exactly “value” or starts with the word “value” and is immediately followed by “-”, so it would be “value-”.
+
+// empty example
+<div>Hello</div>
+<div><!-- Coming soon --></div><!-- This div will be selected -->
+<div></div><!-- This div will be selected -->
+<div> </div>
+<div><strong></strong></div>

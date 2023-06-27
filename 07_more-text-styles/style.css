@@ -1,0 +1,73 @@
+/* Link Type 2: Online Font Library */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+
+/* Always embed system font */
+body {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* Always add a fallback font */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Link Type 3: Downloaded Fonts (Web browser will not find font from user) */
+@font-face {
+  font-family: my-cool-font;
+  src: url(../fonts/the-font-file.woff);
+}
+
+h1.font-style {
+  /* Still include fallback in font-face */
+  font-family: my-cool-font, sans-serif;
+
+  /* Want all header to be italic using css*/
+  /* If the text is in the middle, you need to use html <em>. */
+  font-style: italic;
+}
+
+h1 {
+  font-family: "COUTUREBold";
+  margin: 0;
+  font-size: 38px;
+}
+
+.wide {
+  font-size: 24px;
+  letter-spacing: 0.5em;
+}
+
+.narrow {
+  font-size: 48px;
+  letter-spacing: -0.15em;
+}
+
+/* line-height */
+p.line-height {
+  line-height: 1.5;
+}
+
+/* text-transform */
+div.text-transform {
+  text-transform: uppercase;
+}
+
+/* text-shadow */
+h2.text-shadow {
+  /* offset-x | offset-y | blur-radius | color */
+  text-shadow: 1px 1px 2px black;
+}
+
+/* ellipsis */
+.ellipsis {
+  width: 100px;
+  height: 50px;
+  border: 1px solid black;
+}
+
+.overflowing {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* ... */
+}

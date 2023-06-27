@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <style>
+    h1 {
+      margin-top: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    form {
+      margin: 0 auto;
+      width: 400px;
+      padding: 1em;
+      border: 1px solid #ccc;
+      border-radius: 1em;
+    }
+
+    div + div {
+      margin-top: 1em;
+    }
+
+    label span {
+      display: inline-block;
+      width: 120px;
+      text-align: right;
+    }
+
+    input,
+    textarea {
+      font: 1em sans-serif;
+      width: 250px;
+      box-sizing: border-box;
+      border: 1px solid #999;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      width: auto;
+      border: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #000;
+    }
+
+    textarea {
+      vertical-align: top;
+      height: 5em;
+      resize: vertical;
+    }
+
+    fieldset {
+      width: 250px;
+      box-sizing: border-box;
+      margin-right: 136px;
+      border: 1px solid #999;
+    }
+
+    button {
+      margin: 20px 0 0 124px;
+    }
+
+    label {
+      position: relative;
+    }
+  </style>
+  <body>
+    <!-- Topic: How to structure a web form -->
+    <form action="" method="post">
+      <fieldset>
+        <legend>Fruit juice size</legend>
+        <p>
+          <input type="radio" name="size" id="size_1" value="small" />
+          <label for="size_1">Small</label>
+        </p>
+        <p>
+          <input type="radio" name="size" id="size_2" value="medium" />
+          <label for="size_2">Medium</label>
+        </p>
+        <p>
+          <input type="radio" name="size" id="size_3" value="large" />
+          <label for="size_3">Large</label>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <p>
+          <input
+            type="checkbox"
+            name="taste_cherry"
+            id="taste_1"
+            value="cherry"
+          />
+          <label for="taste_1">I like cherry</label>
+        </p>
+        <p>
+          <input
+            type="checkbox"
+            name="taste_banana"
+            id="taste_2"
+            value="banana"
+          />
+          <label for="taste_2">I like banana</label>
+        </p>
+
+        <!-- Should not nest label (Use span instead) -->
+        <p>
+          Required fields are followed by <span aria-label="required">*</span>.
+        </p>
+        <div>
+          <label for="username"
+            >Name: <span aria-label="required">*</span></label
+          >
+          <input type="text" name="username" id="username" />
+        </div>
+      </fieldset>
+    </form>
+
+    <form>
+      <!-- Active learning -->
+      <h1>Payment form</h1>
+      <p>
+        Required fields are followed by
+        <strong><span arial-label="required">*</span></strong
+        >.
+      </p>
+      <section>
+        <h2>Contact information</h2>
+        <fieldset>
+          <legend>Title</legend>
+          <ul>
+            <li>
+              <label for="title_1">
+                <input type="radio" id="title_1" name="title" value="K" />
+                King
+              </label>
+            </li>
+            <li>
+              <label for="title_2">
+                <input type="radio" id="title_2" name="title" value="Q" />
+                Queen
+              </label>
+            </li>
+            <li>
+              <label for="title_3">
+                <input type="radio" id="title_3" name="title" value="J" />
+                Joker
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <p>
+          <label for="name">
+            <span>Name: </span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input type="text" id="name" name="username" />
+        </p>
+        <p>
+          <label for="mail">
+            <span>Email: </span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input type="email" id="mail" name="usermail" />
+        </p>
+        <p>
+          <label for="pwd">
+            <span>Password: </span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input type="password" id="pwd" name="password" />
+        </p>
+      </section>
+      <section>
+        <h2>Payment information</h2>
+        <p>
+          <label for="card">
+            <span>Card type:</span>
+          </label>
+          <select id="card" name="usercard">
+            <option value="visa">Visa</option>
+            <option value="mc">Mastercard</option>
+            <option value="amex">American Express</option>
+          </select>
+        </p>
+        <p>
+          <label for="number">
+            <span>Card number:</span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input type="tel" id="number" name="cardnumber" />
+        </p>
+        <p>
+          <label for="expiration">
+            <span>Expiration date:</span>
+            <strong><span aria-label="required">*</span></strong>
+          </label>
+          <input
+            type="text"
+            id="expiration"
+            required="true"
+            placeholder="MM/YY"
+            pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$"
+          />
+        </p>
+      </section>
+      <section>
+        <p>
+          <button type="submit">Validate the payment</button>
+        </p>
+      </section>
+      <!-- Topic: Basic native form controls -->
+      <!-- <button> to <input> -->
+      <input type="submit" value="Submit this form" />
+      <input type="reset" value="Reset this form" />
+      <input type="button" value="Do Nothing without JavaScript" />
+      <!-- image button -->
+      <input
+        type="image"
+        alt="Click me!"
+        src="my-img.png"
+        width="80"
+        height="30"
+      />
+      <!-- picker file (can add multiple)-->
+      <input type="file" name="file" id="file" accept="image/*" multiple />
+      <!-- Topic: The HTML5 input types -->
+      <!-- can add multiple in email -->
+      <input type="email" name="email" id="email" multiple />
+      <!-- Search field -->
+      <input type="search" name="search" id="search" />
+      <!-- Phone number field -->
+      <input type="tel" id="tel" name="tel" />
+      <!-- URL field -->
+      <input type="url" name="url" id="url" value="" />
+      <!-- numeric field (allows floating-point numbers) -->
+      <input type="number" name="age" id="age" min="1" max="10" step="2" />
+      <!-- Slider control -->
+      <label for="price">Choose a maximum house price:</label>
+      <input
+        type="range"
+        name="price"
+        id="price"
+        min="50000"
+        max="500000"
+        step="100"
+        value="250000"
+      />
+      <output class="price-output" for="price"></output>
+      <!-- Date and time pickers -->
+      <!-- datetime-local -->
+      <input type="datetime-local" name="datetime" id="datetime" />
+      <!-- month -->
+      <input type="month" name="month" id="month" />
+      <!-- time -->
+      <input type="time" name="time" id="time" />
+      <!-- week -->
+      <input type="week" name="week" id="week" />
+      <!-- Constraining date/time values -->
+      <label for="myDate">When are you available this summer?</label>
+      <input
+        type="date"
+        name="myDate"
+        id="myDate"
+        min="2013-06-01"
+        max="2013-08-31"
+        step="7"
+      />
+      <!-- Color picker control -->
+      <input type="color" name="color" id="color" />
+      <!-- Topic: Other form controls -->
+      <!-- Multi-line text fields -->
+      <!-- wrap="soft, hard, off" -->
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <!-- Controlling textarea resizablity -->
+      <!-- resize property in CSS -->
+      <!-- Using optgroup (selected) -->
+      <select name="groups" id="groups">
+        <optgroup label="fruits">
+          <option value="Banana">Banana</option>
+          <option value="Cherry" selected>Cherry</option>
+          <option value="Lemon">Lemon</option>
+        </optgroup>
+        <optgroup label="vegetables">
+          <option value="carrot">Carrot</option>
+          <option value="eggplant">Eggplant</option>
+          <option value="potato">Potato</option>
+        </optgroup>
+      </select>
+      <!-- set value -->
+      <select id="simple" name="simple">
+        <option value="banana">Big, beautiful yellow banana</option>
+        <option value="cherry">Succulent, juicy cherry</option>
+        <option value="lemon">Sharp, powerful lemon</option>
+      </select>
+      <!-- Multiple choice select box -->
+      <select name="multi" id="multi" multiple size="4">
+        <optgroup label="fruits">
+          <option value="banana">Banana</option>
+          <option value="cherry" selected>Cherry</option>
+          <option value="lemon">Lemon</option>
+        </optgroup>
+        <optgroup label="vegetables">
+          <option value="carrot">Carrot</option>
+          <option value="eggplant">Eggplant</option>
+          <option value="potato">Potato</option>
+        </optgroup>
+      </select>
+      <br />
+      <!-- Autocomplete box <datalist> -->
+      <label for="myFruit">What's your favorite fruit?</label>
+      <input type="text" name="myFruit" id="myFruit" list="mySuggestion" />
+      <datalist id="mySuggestion">
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="blackberry">Blackberry</option>
+        <option value="blueberry">Blueberry</option>
+        <option value="lemon">Lemon</option>
+        <option value="lynchee">Lynchee</option>
+        <option value="peach">Peach</option>
+        <option value="pear">Pear</option>
+      </datalist>
+      <br />
+      <!-- Datalist support and fallbacks (not work yet!)-->
+      <label for="myFruit2">What is your favorite fruit? (With fallback)</label>
+      <input type="text" id="myFruit2" name="fruit" list="fruitList" />
+      <datalist id="fruitList">
+        <label for="suggestion">or pick a fruit</label>
+        <select id="suggestion" name="altFruit">
+          <option>Apple</option>
+          <option>Banana</option>
+          <option>Blackberry</option>
+          <option>Blueberry</option>
+          <option>Lemon</option>
+          <option>Lychee</option>
+          <option>Peach</option>
+          <option>Pear</option>
+        </select>
+      </datalist>
+
+      <!-- Meter and Progress bars (content inside is fallback)-->
+      <progress max="100" value="75">75/100</progress>
+
+      <meter min="0" max="100" value="75" low="30" high="66" optimum="50">
+        75
+      </meter>
+    </form>
+    <script>
+      // For slider control
+      const price = document.querySelector("#price");
+      const output = document.querySelector(".price-output");
+      output.textContent = price.value;
+
+      price.addEventListener("input", function () {
+        output.textContent = this.value;
+      });
+    </script>
+  </body>
+</html>

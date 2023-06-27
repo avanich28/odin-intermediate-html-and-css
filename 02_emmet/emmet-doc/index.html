@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- cmd E and cmd R -->
+
+    <!-- Abbreviation Syntax-->
+    <!-- Child: > (div>ul>li)-->
+    <div>
+      <ul>
+        <li></li>
+      </ul>
+    </div>
+
+    <!-- Sibling: + (div+p+bq) -->
+    <div></div>
+    <p></p>
+    <blockquote></blockquote>
+
+    <!-- Climb-up: ^ (div+div>p>span+em^bq) or (div+div>p>span+em^^bq) -->
+    <div></div>
+    <div>
+      <p><span></span><em></em></p>
+      <blockquote></blockquote>
+    </div>
+
+    <div></div>
+    <div>
+      <p><span></span><em></em></p>
+    </div>
+    <blockquote></blockquote>
+
+    <!-- Multiplication: * (ul>li*5) -->
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <!-- Grouping: () (div>(header>ul>li*2>a)+footer>p) or ((div>dl>(dt+dd)*3)+footer>p) -->
+    <div>
+      <header>
+        <ul>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+        </ul>
+      </header>
+      <footer>
+        <p></p>
+      </footer>
+    </div>
+
+    <div>
+      <dl>
+        <dt></dt>
+        <dd></dd>
+        <dt></dt>
+        <dd></dd>
+        <dt></dt>
+        <dd></dd>
+      </dl>
+    </div>
+    <footer>
+      <p></p>
+    </footer>
+
+    <!-- id and class (div#header+div.page+div#footer.class1.class2.class3)-->
+    <div id="header"></div>
+    <div class="page"></div>
+    <div id="footer" class="class1 class2 class3"></div>
+
+    <!-- Custom attributes [attr] notation (as in CSS) (td[title="Hello world!" colspan=3])-->
+    <td title="Hello world!" colspan="3"></td>
+
+    <!-- Item numbering: $ (ul>li.item$*5) -->
+    <ul>
+      <li class="item1"></li>
+      <li class="item2"></li>
+      <li class="item3"></li>
+      <li class="item4"></li>
+      <li class="item5"></li>
+    </ul>
+
+    <!-- $$$ (ul>li.item$$$*5) -->
+    <ul>
+      <li class="item001"></li>
+      <li class="item002"></li>
+      <li class="item003"></li>
+      <li class="item004"></li>
+      <li class="item005"></li>
+    </ul>
+
+    <!-- add @- (ul>li.item$@-*5) -->
+    <ul>
+      <li class="item5"></li>
+      <li class="item4"></li>
+      <li class="item3"></li>
+      <li class="item2"></li>
+      <li class="item1"></li>
+    </ul>
+
+    <!-- @3 (ul>li.item$@3*5) -->
+    <ul>
+      <li class="item3"></li>
+      <li class="item4"></li>
+      <li class="item5"></li>
+      <li class="item6"></li>
+      <li class="item7"></li>
+    </ul>
+
+    <!-- @-3 (ul>li.item$@-3*5) -->
+    <ul>
+      <li class="item7"></li>
+      <li class="item6"></li>
+      <li class="item5"></li>
+      <li class="item4"></li>
+      <li class="item3"></li>
+    </ul>
+
+    <!-- Text: {} (a{Click me}) -->
+    <a href="">Click me</a>
+
+    <!-- a{click}+b{here} -->
+    <a href="">click</a><b>here</b>
+
+    <!-- a>{click}+b{here} 🔥-->
+    <a href="">click<b>here</b></a>
+
+    <!-- p>{Click }+a{here}+{ to continue} -->
+    <p>Click <a href="">here</a> to continue</p>
+
+    <!-- p{Click }+a{here}+{ to continue} -->
+    <p>Click</p>
+    <a href="">here</a> to continue
+
+    <!-- 1 Wrap with Abbreviation -->
+    <div id="page">
+      <!-- .wrapper>h1{Title}+.content>p{Hello world}-->
+      <div class="wrapper">
+        <h1>Title</h1>
+        <div class="content">
+          <p>Hello world</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 Wrapping individual lines -->
+    <div id="page">
+      <nav>
+        <ul class="nav">
+          <li class="item-1"><a href="">Home</a></li>
+          <li class="item-2"><a href="">Page</a></li>
+          <li class="item-3"><a href="">Products</a></li>
+          <li class="item-4"><a href="">Contacts</a></li>
+          <li class="item-5"><a href="">News</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- 3 Removing list markers * or 1.2.3. (ul>li*|t)-->
+    <ul>
+      <li>Unordered item 1</li>
+      <li>Unordered item 2</li>
+      <li>Unordered item 3</li>
+    </ul>
+
+    <!-- Controlling output position '$# placeholder' (ul>li[title=$#]*>{$#}+img[alt=$#])-->
+    <div id="page">
+      <ul>
+        <li title="About">
+          About
+          <img src="" alt="About" />
+        </li>
+        <li title="News">
+          News
+          <img src="" alt="News" />
+        </li>
+        <li title="Products">
+          Products
+          <img src="" alt="Products" />
+        </li>
+        <li title="Contacts">
+          Contacts
+          <img src="" alt="Contacts" />
+        </li>
+      </ul>
+    </div>
+
+    <!-- Remove tag (cmd R on div) -->
+    <div>
+      <h1>Title</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Officiis animi consequuntur iure.</p>
+      <p>Ea asperiores aperiam non necessitatibus?</p>
+      <p>Expedita iusto cupiditate eum esse.</p>
+    </div>
+
+    <p class="text"></p>
+    <div>
+      <p></p>
+    </div>
+  </body>
+</html>

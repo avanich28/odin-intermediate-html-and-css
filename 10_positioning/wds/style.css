@@ -1,0 +1,26 @@
+/* absolute element is not existed at all. Use when don't want to move any element */
+
+/* absolute need to play with relative if adjust the top */
+
+.parent {
+  position: relative;
+  /* position: absolute; */
+  height: 200vh;
+  text-align: center;
+}
+
+.child-one {
+  position: absolute;
+  top: 0; /* If parent is static, the top value will base on html element, not parent element */
+}
+
+.child-two {
+  position: sticky;
+  top: 0px; /* threshold */
+}
+
+.child-three {
+  position: fixed; /* move to the top of page, not parent element */
+  /* always fix with the entire HTML element */
+  /* move as the page is scroll */
+}

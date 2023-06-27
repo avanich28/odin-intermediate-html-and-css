@@ -1,0 +1,36 @@
+Positioning
+
+Default 
+position: static
+
+The difference between static and relative is fairly simple. 
+Static is the default position of every element, and properties top, right, bottom, and left do not affect the position of the element
+
+// not computed position value
+
+position: relative
+
+Properties top, ri....(etc.) displace the element relative to its normal position in the flow of the document.
+
+// If you don’t set a z-index value, this element will now appear on top of any other statically positioned element. (just only static!) 🔥
+// Limits the scope of absolutely positioned child elements 🔥
+
+position: absolute
+
+Elements that are removed from the normal flow of the document don’t affect other elements and are also not affected by other elements.
+while being positioned relative to an ancestor element
+
+// height and width set to auto
+// These values will be relative to the next parent element with relative (or absolute) positioning.
+
+position: fixed
+
+Fixed elements are also removed from the normal flow of the document and are positioned relative to the viewport.
+
+// fixed to viewport
+
+position: sticky
+
+Sticky elements will act like a static until you scroll past them, then they start behaving like fixed elements.
+
+// set top

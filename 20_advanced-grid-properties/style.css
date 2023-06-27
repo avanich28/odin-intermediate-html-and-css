@@ -1,0 +1,73 @@
+.grid-container {
+  resize: both;
+  overflow: auto;
+
+  display: grid;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid grey;
+  background-color: skyblue;
+
+  /* Repeat */
+  /* Fractional units (dynamic) */
+  /* px (static) */
+  /* min-content */
+  grid-template: repeat(2, 1fr) / repeat(2, 2fr) repeat(3, min-content);
+
+  /* min() max() */
+  /* use dynamic value */
+  /* 50% of grid-container's height */
+  grid-template: repeat(2, min(200px, 50%)) / repeat(5, max(120px, 15%));
+
+  /* Responsive is imperative to use on img */
+  /* minmax() -> grid-template, grid-auto */
+  /* can use static value */
+  grid-template: repeat(2, 1fr) / repeat(5, minmax(150px, 200px));
+
+  /* clamp(minimum-size, ideal-size, maximum-size) */
+  grid-template: repeat(2, 1fr) / (5, clamp(150px, 20%, 200px));
+
+  /* auto-fit */
+  /* The empty space collapses. */
+  grid-template: repeat(2, 1fr) / repeat(auto-fit, minmax(150px, 1fr));
+
+  /* auto-fill */
+  /* They will continue their pattern of growing to 'max' and snapping back to their 'min' as the grid expands and more room becomes available for new grid tracks. */
+  grid-template: repeat(2, 1fr) / repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.grid-item {
+  background-color: #444;
+  text-align: center;
+  color: #ddd;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  padding: 12px;
+}
+
+p {
+  margin: 12px auto 24px;
+}
+
+img {
+  height: 60px;
+}
+
+/* .simple-example {
+  background-color: black;
+  height: 100px;
+  width: clamp(500px, 80%, 800px);
+} */
+
+.simple-example {
+  display: grid;
+  background-color: orangered;
+  gap: 1px;
+  height: 50px;
+  width: 1004px;
+  grid-template-columns: repeat(auto-fill, 200px);
+}
+
+.simple-example > div {
+  background-color: rgb(255, 174, 0);
+}

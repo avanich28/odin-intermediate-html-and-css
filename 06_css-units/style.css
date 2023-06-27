@@ -1,0 +1,15 @@
+html {
+  font-size: 125%;
+}
+
+.ems li {
+  font-size: 1em; /*16.9*/
+}
+
+.rems li {
+  font-size: 1.3rem; /*13*/
+}
+
+.percentage li {
+  font-size: 80%;
+}

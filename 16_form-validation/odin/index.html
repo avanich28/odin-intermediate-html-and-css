@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#" method="get">
+      <!-- Required Validation & * -->
+      <div>
+        <label for="user_email">*Email:</label>
+        <input type="email" name="user_email" id="user_email" required />
+      </div>
+      <br />
+
+      <div>
+        <label for="user_password">*Password:</label>
+        <input
+          type="password"
+          name="user_password"
+          id="user_password"
+          required
+        />
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- Text Length Validation -->
+    <!-- (the amount of characters) -->
+    <form action="#" method="get">
+      <!-- Minimum Length Validation -->
+      <!-- Maximum Length Validation -->
+      <!-- Combining Length Validation -->
+      <div>
+        <textarea
+          name="comment"
+          id="user_comment"
+          minlength="3"
+          maxlength="20"
+          placeholder="What's happening?"
+        ></textarea>
+      </div>
+
+      <div>
+        <!-- rows and cols attributes to allow you to specify an exact size for the <textarea> to take. -->
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+      </div>
+
+      <button type="submit">Tweet</button>
+    </form>
+
+    <!-- Number Range Validation -->
+    <form action="#" method="get">
+      <!-- min validation -->
+      <!-- max validation -->
+      <div>
+        <label for="quantity">Quantity</label>
+      </div>
+      <input
+        type="number"
+        name="quantity"
+        id="quantity"
+        min="1"
+        max="5"
+        value="0"
+      />
+
+      <div>
+        <button type="submit">Place Order</button>
+      </div>
+    </form>
+
+    <!-- Pattern Validation -->
+    <form action="#" method="get">
+      <div>
+        <label for="zip_code">Postal / Zip Code:</label>
+      </div>
+
+      <!-- pattern attribute can be use on only input -->
+      <input
+        type="text"
+        name="zip_code"
+        id="zip_code"
+        pattern="(\d{5}([\-]\d{4})?)"
+        title="Please enter a valid zip code, example: 65251"
+        placeholder="65251"
+        required
+      />
+
+      <!-- Some input already validate data that matches a certain pattern (ex. email, url) -->
+      <div>
+        <label for="email">Email:</label>
+      </div>
+      <input type="email" name="email" id="email" />
+
+      <div>
+        <label for="website">Website:</label>
+      </div>
+      <input type="url" name="website" id="website" />
+
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <!-- Styling Validations -->
+    <form action="#" method="get">
+      <div>
+        <label for="email-2">Email</label>
+      </div>
+      <input type="email" name="email" id="email-2" />
+
+      <div>
+        <label for="website-2">Website</label>
+      </div>
+      <input type="url" name="website" id="website-2" />
+
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>

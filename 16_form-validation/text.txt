@@ -1,0 +1,38 @@
+Topic: Form Validation
+
+1. Required Validation
+
+attribute: Required
+text: *
+
+2. Minimum Length Validation (the minimum amount of characters)
+element: textarea
+attribute: minlength
+
+3. Maximum Length Validation
+element: textarea
+attribute: maxlength
+
+4. Min validation
+type: number
+attribute: min
+
+5. Max validation
+type: number
+attribute: max
+
+Some real-world use cases for using these validations would be limiting the quantity on a product order form or choosing the number of passengers on a flight booking form.
+
+6. Pattern Validation
+Pattern attribute can be used on only input.
+type: text
+attribute: pattern title placeholder required 
+
+Some input already validate data that matches a certain pattern 
+type: email, url
+
+7. Styling Validations
+pseudo-classes: :valid, :invalid
+
+8. input type="number"
+default attribute: step="1" 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- class='dark'-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Custom Properties</title>
+  </head>
+  <body>
+    <div class="px">Hello</div>
+    <div class="rem">
+      Hello
+      <div class="em">Hello</div>
+    </div>
+
+    <!-- scope -->
+    <div class="cool-div">
+      <p class="cool-paragraph">Check out my cool</p>
+    </div>
+    <p class="boring-paragraph">I'm not in cool scope.</p>
+
+    <!-- :root selector -->
+    <p class="hot-paragraph">Lorem ipsum dolor sit amet.</p>
+    <p class="exciting-paragraph">Lorem ipsum dolor sit amet.</p>
+
+    <!-- Creating Themes with Custom Properties -->
+    <div class="container">
+      <p>
+        You're now viewing this example with the
+        <spa class="theme-name">dark</spa> theme!
+      </p>
+      <button class="theme-toggle">Toggle Theme</button>
+    </div>
+
+    <!-- Media Query (prefers-color-scheme) -->
+    <div class="container-2">
+      <p>
+        Based on your theme setting in your OS or user agent, you're now viewing
+        this example with the <span class="theme-name"></span> theme!
+      </p>
+    </div>
+
+    <!-- Invalid normal properties -->
+    <p class="invalid-normal">This paragraph is initially black.</p>
+
+    <!-- Invalid custom properties -->
+    <p class="invalid-custom">This paragraph is initially black.</p>
+
+    <!-- Value in JS -->
+    <div class="element">paragraph</div>
+  </body>
+</html>

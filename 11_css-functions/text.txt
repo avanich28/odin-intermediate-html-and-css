@@ -1,0 +1,62 @@
+CSS Functions
+
+- reusable pieces of code which perform specific tasks
+
+CSS functions that are useful when designing a website’s layout and sizing.
+
+- calc()
+// Handle mixing units -> 100vh - (3rem + 40px)
+// The ability to nest -> calc(calc() - calc())
+
+- min()
+// select the smallest value
+
+parent (window) width: 774px;
+width: min(50%, 400px)
+Element actual width: 386px
+
+- max()
+// select the largest possible  
+// You can think of max() as ensuring a minimum allowed value for a property.
+
+
+// width: max(100px, 4em, 50%);
+
+parent (window) width: 863px
+width: max(50%, 400px)
+Element actual width: 432px
+
+- clamp()
+
+h1 {
+  font-size: clamp(320px, 80vw, 60rem);
+}
+
+// the smallest value (320px)
+// the ideal value (80vw)
+// the largest value (60rem)
+
+// width: clamp(350px, 50%, 500px)
+
+- Use ch 
+
+// ch = the width of the 0 character
+// text blocks are not narrower than 45 or wider than 75 characters
+p {
+  width: clamp(45ch, 50%, 75ch);
+}
+
+- Padding management
+
+// The min() function can set a 'max' value.
+// The max() function sets a 'min' value.
+
+footer {
+  padding: var(--blockPadding) max(2rem, 50vw - var(--contentWidth) / 2);
+}
+
+- Fluid typography
+
+p {
+  font-size: clamp(1.5rem, 5vw, 3rem)
+}
